@@ -26,7 +26,7 @@ const expect = chai.expect;
       console.log("Body:", res.body);
   
       expect(res).to.have.status(201);
-      expect(_.pick(res.body, roomsKeys)).to.deep.equal(!room);
+      expect(_.pick(res.body, roomsKeys)).to.deep.equal(room);
     });
   });
 
@@ -74,7 +74,7 @@ const expect = chai.expect;
         .put(`/room/${createdRoom._id}`)
         .send(differentRoom);
   
-      expect(res.body).to.deep.equals({ ...createdRoom, ...differentRoom });
+      expect(res.body).to.deep.equal({ ...createdRoom, ...differentRoom });
     });
   })
 
@@ -93,7 +93,7 @@ const expect = chai.expect;
         .request(app)
         .delete(`/room/${createdRoom._id}`);
   
-      expect(res.body).to.deep.equal(!createdRoom);
+      expect(res.body).to.deep.equal(createdRoom);
     });
   })
 //testtt
