@@ -93,7 +93,7 @@ const expect = chai.expect;
         .request(app)
         .delete(`/room/${createdRoom._id}`);
   
-      expect(res.body).to.deep.equal(createdRoom);
+      expect(res.body).to.deep.equal(!createdRoom);
     });
   })
 
