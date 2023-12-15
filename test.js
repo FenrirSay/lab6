@@ -46,7 +46,7 @@ const expect = chai.expect;
         .get("/room");
   
       expect(res.body).to.be.an("array");
-      expect(res.body.some(room => room._id === createdRoom._id)).to.be.false; // for crash
+      expect(res.body.some(room => room._id === createdRoom._id)).to.be.true; 
     });
   
     it("Should get one room by id", async () => {
@@ -85,7 +85,7 @@ const expect = chai.expect;
         .post("/room")
         .send(room)
   
-        createdRoom = response.body;
+        createdRoom = createdRoom;
     });
   
     it("Should delete room by id", async () => {
@@ -96,4 +96,4 @@ const expect = chai.expect;
       expect(res.body).to.deep.equal(createdRoom);
     });
   })
-//testtt
+
