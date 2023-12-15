@@ -85,7 +85,7 @@ const expect = chai.expect;
         .post("/room")
         .send(room)
   
-        createdRoom = response.body;
+        createdRoom = createdRoom;
     });
   
     it("Should delete room by id", async () => {
